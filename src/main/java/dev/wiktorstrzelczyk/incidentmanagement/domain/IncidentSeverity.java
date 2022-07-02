@@ -1,9 +1,13 @@
 package dev.wiktorstrzelczyk.incidentmanagement.domain;
 
-public final class IncidentSeverity {
+public enum IncidentSeverity {
+
+    ONE(1),
+    TWO(2),
+    THREE(3);
     private final Integer level;
 
-    public IncidentSeverity(Integer level) {
+    IncidentSeverity(Integer level) {
         this.level = level;
     }
 }
