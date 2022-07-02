@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class IncidentsHistoryTest {
 
     private final DateRange SAMPLE_INCIDENT_PERIOD = new DateRange(
@@ -21,13 +23,26 @@ public class IncidentsHistoryTest {
         );
 
         // when
-        incidentsHistory
+        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
 
+        // then
+        assertThat(incidentsSummary).isEqualTo(
+                new IncidentsSummary(
+                        List.of(
+                                new IncidentSummary(
+                                        new Asset("CRM System"),
+                                        1L,
+                                        1L,
+                                        30L
+                                )
+                        )
+                )
+        );
     }
 
     private Incident sampleIncident() {
         return new Incident(
-                "CRM System",
+                new Asset("CRM System"),
                 SAMPLE_INCIDENT_PERIOD,
                 IncidentSeverity.ONE
         );
