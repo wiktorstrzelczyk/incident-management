@@ -12,10 +12,9 @@ public final class Incidents {
         this.incidents = incidents;
     }
 
-    public IncidentsSummary calculateSummary() {
+    public List<IncidentSummary> calculateSummary() {
         Set<Asset> assets = incidents.stream().map(incident -> incident.asset).collect(Collectors.toSet());
-        List<IncidentSummary> incidentSummaries = assets.stream().map(asset -> incidentSummaryFor(asset)).collect(Collectors.toList());
-        return new IncidentsSummary(incidentSummaries);
+        return assets.stream().map(asset -> incidentSummaryFor(asset)).collect(Collectors.toList());
     }
 
     private IncidentSummary incidentSummaryFor(Asset asset) {

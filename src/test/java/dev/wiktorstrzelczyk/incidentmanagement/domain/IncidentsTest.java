@@ -23,18 +23,16 @@ public class IncidentsTest {
         );
 
         // when
-        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
 
         // then
-        assertThat(incidentsSummary).isEqualTo(
-                new IncidentsSummary(
-                        List.of(
-                                new IncidentSummary(
-                                        CRM_SYSTEM_ASSET,
-                                        1,
-                                        1L,
-                                        30L
-                                )
+        assertThat(incidentsSummaries).isEqualTo(
+                List.of(
+                        new IncidentSummary(
+                                CRM_SYSTEM_ASSET,
+                                1,
+                                1L,
+                                30L
                         )
                 )
         );
@@ -64,18 +62,16 @@ public class IncidentsTest {
         );
 
         // when
-        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
 
         // then
-        assertThat(incidentsSummary).isEqualTo(
-                new IncidentsSummary(
-                        List.of(
-                                new IncidentSummary(
-                                        CRM_SYSTEM_ASSET,
-                                        3,
-                                        3L,
-                                        90L
-                                )
+        assertThat(incidentsSummaries).isEqualTo(
+                List.of(
+                        new IncidentSummary(
+                                CRM_SYSTEM_ASSET,
+                                3,
+                                3L,
+                                90L
                         )
                 )
         );
@@ -100,28 +96,27 @@ public class IncidentsTest {
         );
 
         // when
-        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
 
         // then
-        assertThat(incidentsSummary).isEqualTo(
-                new IncidentsSummary(
-                        List.of(
-                                new IncidentSummary(
-                                        CRM_SYSTEM_ASSET,
-                                        1,
-                                        1L,
-                                        30L
-                                ),
-                                new IncidentSummary(
-                                        SLACK_ASSET,
-                                        1,
-                                        1L,
-                                        30L
-                                )
+        assertThat(incidentsSummaries).isEqualTo(
+                List.of(
+                        new IncidentSummary(
+                                CRM_SYSTEM_ASSET,
+                                1,
+                                1L,
+                                30L
+                        ),
+                        new IncidentSummary(
+                                SLACK_ASSET,
+                                1,
+                                1L,
+                                30L
                         )
                 )
         );
     }
+
     @Test
     public void shouldCorrectlyCalculateTotalDowntimeOfAsset() {
         // given
@@ -141,18 +136,16 @@ public class IncidentsTest {
         );
 
         // when
-        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
 
         // then
-        assertThat(incidentsSummary).isEqualTo(
-                new IncidentsSummary(
-                        List.of(
-                                new IncidentSummary(
-                                        CRM_SYSTEM_ASSET,
-                                        2,
-                                        3601L,
-                                        60L
-                                )
+        assertThat(incidentsSummaries).isEqualTo(
+                List.of(
+                        new IncidentSummary(
+                                CRM_SYSTEM_ASSET,
+                                2,
+                                3601L,
+                                60L
                         )
                 )
         );
@@ -182,18 +175,16 @@ public class IncidentsTest {
         );
 
         // when
-        IncidentsSummary incidentsSummary = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
 
         // then
-        assertThat(incidentsSummary).isEqualTo(
-                new IncidentsSummary(
-                        List.of(
-                                new IncidentSummary(
-                                        CRM_SYSTEM_ASSET,
-                                        3,
-                                        3L,
-                                        50L
-                                )
+        assertThat(incidentsSummaries).isEqualTo(
+                List.of(
+                        new IncidentSummary(
+                                CRM_SYSTEM_ASSET,
+                                3,
+                                3L,
+                                50L
                         )
                 )
         );
