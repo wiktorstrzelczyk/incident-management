@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class IncidentsHistoryTest {
+public class IncidentsTest {
 
     private final DateRange SAMPLE_INCIDENT_PERIOD = new DateRange(
             LocalDateTime.of(1, 2, 3, 4, 5, 6),
@@ -17,9 +17,8 @@ public class IncidentsHistoryTest {
     @Test
     public void shouldFindTotalIndicentsPerAssetForTheDay() {
         // given
-        IncidentsHistory incidentsHistory = new IncidentsHistory(
-                List.of(sampleIncident()),
-                SAMPLE_INCIDENT_PERIOD
+        Incidents incidentsHistory = new Incidents(
+                List.of(sampleIncident())
         );
 
         // when
@@ -31,7 +30,7 @@ public class IncidentsHistoryTest {
                         List.of(
                                 new IncidentSummary(
                                         new Asset("CRM System"),
-                                        1L,
+                                        1,
                                         1L,
                                         30L
                                 )

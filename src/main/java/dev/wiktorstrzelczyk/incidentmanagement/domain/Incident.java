@@ -1,9 +1,9 @@
 package dev.wiktorstrzelczyk.incidentmanagement.domain;
 
 public final class Incident {
-    private final Asset asset;
-    private final DateRange period;
-    private final IncidentSeverity severity;
+    public final Asset asset;
+    public final DateRange period;
+    public final IncidentSeverity severity;
 
     public Incident(Asset asset, DateRange period, IncidentSeverity severity) {
         this.asset = asset;
