@@ -2,17 +2,16 @@ package dev.wiktorstrzelczyk.incidentmanagement.infrastructure;
 
 import dev.wiktorstrzelczyk.incidentmanagement.application.IncidentService;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDate;
 
-@Controller("/incidents")
+@Controller
+@RequestMapping("/incidents")
 public class IncidentController {
 
     private final IncidentService incidentService;
@@ -36,4 +35,14 @@ public class IncidentController {
 
         }
     }
+
+    @PostMapping(
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity addRandomIncident() {
+        incidentService.addIncident();
+        return ResponseEntity.ok().build();
+    }
+
 }

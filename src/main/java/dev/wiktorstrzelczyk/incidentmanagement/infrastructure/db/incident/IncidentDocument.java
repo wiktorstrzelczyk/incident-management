@@ -19,6 +19,14 @@ final class IncidentDocument {
     LocalDateTime endDate;
     int severity;
 
+    public IncidentDocument(String id, String assetName, LocalDateTime startDate, LocalDateTime endDate, int severity) {
+        this.id = id;
+        this.assetName = assetName;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.severity = severity;
+    }
+
     public Incident toDomain() {
         return new Incident(
                 new Asset(assetName),
@@ -27,6 +35,16 @@ final class IncidentDocument {
                         endDate
                 ),
                 IncidentSeverity.from(severity)
+        );
+    }
+
+    public static IncidentDocument fromDomain(Incident incident) {
+        return new IncidentDocument(
+                null,
+                incident.asset.name,
+                incident.period.start,
+                incident.period.stop,
+                incident.severity.toLevel()
         );
     }
 }

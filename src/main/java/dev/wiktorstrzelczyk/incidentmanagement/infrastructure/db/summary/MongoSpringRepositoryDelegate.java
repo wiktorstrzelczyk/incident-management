@@ -2,12 +2,13 @@ package dev.wiktorstrzelczyk.incidentmanagement.infrastructure.db.summary;
 
 import dev.wiktorstrzelczyk.incidentmanagement.domain.IncidentsStatisticalSummary;
 import dev.wiktorstrzelczyk.incidentmanagement.domain.IncidentsStatisticalSummaryRepository;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Component("incidents-statistical-summary-repository-delegate")
 final class MongoSpringRepositoryDelegate implements IncidentsStatisticalSummaryRepository {
 
     private final MongoSpringRepository mongoSpringRepository;

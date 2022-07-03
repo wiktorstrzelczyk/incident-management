@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Repository
+@Repository("incidents-mongo-spring-repository")
 interface MongoSpringRepository extends MongoRepository<IncidentDocument, String> {
 
     List<IncidentDocument> findAllByStartDateGreaterThanEqualAndEndDateLessThan(LocalDateTime startDate, LocalDateTime endDate);

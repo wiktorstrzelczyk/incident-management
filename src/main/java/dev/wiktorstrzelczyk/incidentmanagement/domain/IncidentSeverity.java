@@ -18,4 +18,13 @@ public enum IncidentSeverity {
             default: throw new IllegalArgumentException("Severity level should be a value from 1 to 3.");
         }
     }
+
+    public int toLevel() {
+        switch(this) {
+            case ONE: return 1;
+            case TWO: return 2;
+            case THREE: return 3;
+            default: throw new IllegalArgumentException("Severity level should be a value from 1 to 3.");
+        }
+    }
 }
