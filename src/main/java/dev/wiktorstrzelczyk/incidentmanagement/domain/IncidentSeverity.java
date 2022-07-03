@@ -10,7 +10,7 @@ public enum IncidentSeverity {
         this.weight = weight;
     }
 
-    public IncidentSeverity fromInt(int level) {
+    public static IncidentSeverity from(int level) {
         switch(level) {
             case 1: return ONE;
             case 2: return TWO;
