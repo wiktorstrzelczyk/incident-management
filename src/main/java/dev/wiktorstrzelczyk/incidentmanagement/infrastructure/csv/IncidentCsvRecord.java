@@ -9,11 +9,17 @@ import dev.wiktorstrzelczyk.incidentmanagement.domain.IncidentSeverity;
 import java.time.LocalDateTime;
 
 class IncidentCsvRecord {
-    String id;
     String assetName;
     LocalDateTime startDate;
     LocalDateTime endDate;
     int severity;
+
+    public IncidentCsvRecord(String assetName, LocalDateTime startDate, LocalDateTime endDate, int severity) {
+        this.assetName = assetName;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.severity = severity;
+    }
 
     Incident toDomain() {
         return new Incident(
