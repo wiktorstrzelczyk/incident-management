@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class IncidentsTest {
 
     @Test
-    public void shouldCalculateIncidentsSummaryForOneIncident() {
+    public void calculates_statistics_for_single_incident() {
         // given
         Incidents incidentsHistory = new Incidents(
                 List.of(
@@ -39,7 +39,7 @@ public class IncidentsTest {
     }
 
     @Test
-    public void shouldCalculateIncidentsSummaryForSeveralIncidents() {
+    public void calculates_statistics_for_three_incidents() {
         // given
         Incidents incidentsHistory = new Incidents(
                 List.of(
@@ -78,7 +78,7 @@ public class IncidentsTest {
     }
 
     @Test
-    public void shouldCalculateIncidentsSummaryForSeveralAssets() {
+    public void calculates_statistics_for_two_different_assets() {
         // given
         Incidents incidentsHistory = new Incidents(
                 List.of(
