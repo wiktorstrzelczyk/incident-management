@@ -35,14 +35,4 @@ public class IncidentController {
 
         }
     }
-
-    @PostMapping(
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity addRandomIncident() {
-        incidentService.addIncident();
-        return ResponseEntity.ok().build();
-    }
-
 }
