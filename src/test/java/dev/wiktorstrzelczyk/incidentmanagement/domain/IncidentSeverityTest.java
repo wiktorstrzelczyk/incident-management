@@ -11,7 +11,7 @@ public class IncidentSeverityTest {
     @Test
     public void maps_1_to_severity_one() {
         // when
-        IncidentSeverity incidentSeverity = IncidentSeverity.from(1);
+        IncidentSeverity incidentSeverity = IncidentSeverity.fromInt(1);
 
         // then
         assertThat(incidentSeverity).isEqualTo(IncidentSeverity.ONE);
@@ -20,7 +20,7 @@ public class IncidentSeverityTest {
     @Test
     public void maps_2_to_severity_two() {
         // when
-        IncidentSeverity incidentSeverity = IncidentSeverity.from(2);
+        IncidentSeverity incidentSeverity = IncidentSeverity.fromInt(2);
 
         // then
         assertThat(incidentSeverity).isEqualTo(IncidentSeverity.TWO);
@@ -29,7 +29,7 @@ public class IncidentSeverityTest {
     @Test
     public void maps_3_to_severity_three() {
         // when
-        IncidentSeverity incidentSeverity = IncidentSeverity.from(3);
+        IncidentSeverity incidentSeverity = IncidentSeverity.fromInt(3);
 
         // then
         assertThat(incidentSeverity).isEqualTo(IncidentSeverity.THREE);
@@ -40,7 +40,7 @@ public class IncidentSeverityTest {
     public void mapping_values_different_than_1_2_3_is_not_allowed() {
         // when then
         assertThrows(IllegalArgumentException.class, () -> {
-            IncidentSeverity.from(4);
+            IncidentSeverity.fromInt(4);
         });
     }
 }

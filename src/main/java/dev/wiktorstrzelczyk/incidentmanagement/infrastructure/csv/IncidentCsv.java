@@ -22,7 +22,7 @@ class IncidentCsv {
                         startDate,
                         endDate
                 ),
-                IncidentSeverity.from(severity)
+                IncidentSeverity.fromInt(severity)
         );
     }
 }

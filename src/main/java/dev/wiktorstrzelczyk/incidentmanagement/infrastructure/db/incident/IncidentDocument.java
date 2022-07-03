@@ -34,7 +34,7 @@ final class IncidentDocument {
                         startDate,
                         endDate
                 ),
-                IncidentSeverity.from(severity)
+                IncidentSeverity.fromInt(severity)
         );
     }
 
