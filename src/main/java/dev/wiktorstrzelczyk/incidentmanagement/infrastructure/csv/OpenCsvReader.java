@@ -29,7 +29,7 @@ public class OpenCsvReader implements IncidentsFromInputStreamReader {
         HeaderColumnNameTranslateMappingStrategy strategy = new HeaderColumnNameTranslateMappingStrategy();
         strategy.setType(IncidentCsvRecord.class);
         strategy.setColumnMapping(mapping());
-        CsvToBean<IncidentCsvRecord> csvReader = new CsvToBeanBuilder(reader)
+        return new CsvToBeanBuilder(reader)
                 .withSeparator(';')
                 .withIgnoreLeadingWhiteSpace(true)
                 .withIgnoreEmptyLine(true)
