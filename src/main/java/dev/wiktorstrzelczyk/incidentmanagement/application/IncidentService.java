@@ -25,4 +25,8 @@ public class IncidentService {
         List<IncidentsStatisticalSummary> incidentSummaries = dailyIncidents.summary();
         incidentsStatisticalSummaryRepository.save(incidentSummaries);
     }
+
+    public List<IncidentsStatisticalSummary> getStatisticalSummaryFor(LocalDate date) {
+        return incidentsStatisticalSummaryRepository.forDay(date);
+    }
 }
