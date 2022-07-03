@@ -8,7 +8,7 @@ import dev.wiktorstrzelczyk.incidentmanagement.domain.IncidentSeverity;
 
 import java.time.LocalDateTime;
 
-class IncidentCsv {
+class IncidentCsvRecord {
     String id;
     String assetName;
     LocalDateTime startDate;

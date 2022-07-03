@@ -1,9 +1,5 @@
 package dev.wiktorstrzelczyk.incidentmanagement.infrastructure.csv;
 
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import dev.wiktorstrzelczyk.incidentmanagement.domain.Incident;
@@ -21,13 +17,13 @@ public class OpenCsvReader implements IncidentsFromInputStreamReader {
     @Override
     public List<Incident> readFrom(InputStream inputStream) {
         Reader reader = new InputStreamReader(inputStream);
-        CsvToBean<IncidentCsv> csvReader = new CsvToBeanBuilder(reader)
-                .withType(IncidentCsv.class)
+        CsvToBean<IncidentCsvRecord> csvReader = new CsvToBeanBuilder(reader)
+                .withType(IncidentCsvRecord.class)
                 .withSeparator(';')
                 .withIgnoreLeadingWhiteSpace(true)
                 .withIgnoreEmptyLine(true)
                 .build();
-        List<IncidentCsv> incidentCsv = csvReader.parse();
-        return incidentCsv.stream().map(IncidentCsv::toDomain).collect(Collectors.toList());
+        List<IncidentCsvRecord> incidentCsvRecords = csvReader.parse();
+        return incidentCsvRecords.stream().map(IncidentCsvRecord::toDomain).collect(Collectors.toList());
     }
 }
