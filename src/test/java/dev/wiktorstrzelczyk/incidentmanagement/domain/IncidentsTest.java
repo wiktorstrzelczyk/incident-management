@@ -23,7 +23,7 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
@@ -62,7 +62,7 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
@@ -96,7 +96,7 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
@@ -141,7 +141,7 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
+        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
