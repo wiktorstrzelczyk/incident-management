@@ -44,7 +44,7 @@ final class IncidentDocument {
                 incident.asset.name,
                 incident.period.start,
                 incident.period.stop,
-                incident.severity.toLevel()
+                incident.severity.toInt()
         );
     }
 }
