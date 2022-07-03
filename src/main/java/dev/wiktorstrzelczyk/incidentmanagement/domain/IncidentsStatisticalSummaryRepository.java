@@ -6,5 +6,5 @@ import java.util.List;
 public interface IncidentsStatisticalSummaryRepository {
 
     List<IncidentSummary> forDay(LocalDate date);
-    void save(IncidentSummary incidentSummary);
+    void save(List<IncidentSummary> incidentSummaries);
 }
