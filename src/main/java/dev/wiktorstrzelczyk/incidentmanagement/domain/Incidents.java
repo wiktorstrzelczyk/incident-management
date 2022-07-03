@@ -12,14 +12,14 @@ public final class Incidents {
         this.incidents = incidents;
     }
 
-    public List<IncidentSummary> summary() {
+    public List<IncidentsStatisticalSummary> summary() {
         Set<Asset> assets = incidents.stream().map(incident -> incident.asset).collect(Collectors.toSet());
         return assets.stream().map(asset -> incidentSummaryFor(asset)).collect(Collectors.toList());
     }
 
-    private IncidentSummary incidentSummaryFor(Asset asset) {
+    private IncidentsStatisticalSummary incidentSummaryFor(Asset asset) {
         List<Incident> incidents = getBy(asset);
-        return new IncidentSummary(
+        return new IncidentsStatisticalSummary(
                 asset,
                 incidents.size(),
                 totalOfDowntimeInSecondsFor(incidents),

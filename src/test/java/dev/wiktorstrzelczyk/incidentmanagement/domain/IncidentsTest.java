@@ -23,12 +23,12 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
+        List<IncidentsStatisticalSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
                 List.of(
-                        new IncidentSummary(
+                        new IncidentsStatisticalSummary(
                                 CRM_SYSTEM_ASSET,
                                 1,
                                 1L,
@@ -62,12 +62,12 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
+        List<IncidentsStatisticalSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
                 List.of(
-                        new IncidentSummary(
+                        new IncidentsStatisticalSummary(
                                 CRM_SYSTEM_ASSET,
                                 3,
                                 3L,
@@ -96,18 +96,18 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
+        List<IncidentsStatisticalSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
                 List.of(
-                        new IncidentSummary(
+                        new IncidentsStatisticalSummary(
                                 CRM_SYSTEM_ASSET,
                                 1,
                                 1L,
                                 30L
                         ),
-                        new IncidentSummary(
+                        new IncidentsStatisticalSummary(
                                 SLACK_ASSET,
                                 1,
                                 1L,
@@ -141,12 +141,12 @@ public class IncidentsTest {
         );
 
         // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.summary();
+        List<IncidentsStatisticalSummary> incidentsSummaries = incidentsHistory.summary();
 
         // then
         assertThat(incidentsSummaries).isEqualTo(
                 List.of(
-                        new IncidentSummary(
+                        new IncidentsStatisticalSummary(
                                 CRM_SYSTEM_ASSET,
                                 3,
                                 1L,

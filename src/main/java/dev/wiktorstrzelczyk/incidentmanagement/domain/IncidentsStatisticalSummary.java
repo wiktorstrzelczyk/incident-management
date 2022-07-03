@@ -3,13 +3,13 @@ package dev.wiktorstrzelczyk.incidentmanagement.domain;
 
 import java.util.Objects;
 
-public final class IncidentSummary {
+public final class IncidentsStatisticalSummary {
     public final Asset asset;
     public final int totalIncidents;
     public final long totalDowntimeInSeconds;
     public final long rating;
 
-    public IncidentSummary(Asset asset, int totalIncidents, long totalDowntimeInSeconds, long rating) {
+    public IncidentsStatisticalSummary(Asset asset, int totalIncidents, long totalDowntimeInSeconds, long rating) {
         this.asset = asset;
         this.totalIncidents = totalIncidents;
         this.totalDowntimeInSeconds = totalDowntimeInSeconds;
@@ -20,7 +20,7 @@ public final class IncidentSummary {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        IncidentSummary that = (IncidentSummary) o;
+        IncidentsStatisticalSummary that = (IncidentsStatisticalSummary) o;
         return totalIncidents == that.totalIncidents && totalDowntimeInSeconds == that.totalDowntimeInSeconds && rating == that.rating && Objects.equals(asset, that.asset);
     }
 
