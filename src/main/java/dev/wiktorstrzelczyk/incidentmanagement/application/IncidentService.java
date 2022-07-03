@@ -23,7 +23,7 @@ public class IncidentService {
     public void calculateStatisticalSummaryFor(LocalDate date) {
         Incidents dailyIncidents = incidentRepository.occurredOn(date);
         List<IncidentsStatisticalSummary> incidentSummaries = dailyIncidents.summary();
-        incidentsStatisticalSummaryRepository.save(incidentSummaries);
+        incidentsStatisticalSummaryRepository.saveForDate(date, incidentSummaries);
     }
 
     public List<IncidentsStatisticalSummary> getStatisticalSummaryFor(LocalDate date) {
