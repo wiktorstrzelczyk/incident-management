@@ -29,6 +29,7 @@ public final class Incidents {
 
     private long totalOfDowntimeInSecondsFor(List<Incident> incidents) {
         return incidents.stream()
+                .filter(incident -> incident.severity == IncidentSeverity.ONE)
                 .map(incident -> incident.period.toSeconds())
                 .reduce(0L, (subtotal, element) -> subtotal + element);
     }
