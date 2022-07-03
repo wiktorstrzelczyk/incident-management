@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-final class MongoRepository implements IncidentsStatisticalSummaryRepository {
+final class MongoSpringRepositoryDelegate implements IncidentsStatisticalSummaryRepository {
 
     private final MongoSpringRepository mongoSpringRepository;
 
-    public MongoRepository(MongoSpringRepository mongoSpringRepository) {
+    public MongoSpringRepositoryDelegate(MongoSpringRepository mongoSpringRepository) {
         this.mongoSpringRepository = mongoSpringRepository;
     }
 
