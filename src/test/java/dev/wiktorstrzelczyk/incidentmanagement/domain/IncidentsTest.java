@@ -118,41 +118,7 @@ public class IncidentsTest {
     }
 
     @Test
-    public void shouldCorrectlyCalculateTotalDowntimeOfAsset() {
-        // given
-        Incidents incidentsHistory = new Incidents(
-                List.of(
-                        new Incident(
-                                CRM_SYSTEM_ASSET,
-                                ONE_SECOND_PERIOD,
-                                IncidentSeverity.ONE
-                        ),
-                        new Incident(
-                                CRM_SYSTEM_ASSET,
-                                ONE_HOUR_PERIOD,
-                                IncidentSeverity.ONE
-                        )
-                )
-        );
-
-        // when
-        List<IncidentSummary> incidentsSummaries = incidentsHistory.calculateSummary();
-
-        // then
-        assertThat(incidentsSummaries).isEqualTo(
-                List.of(
-                        new IncidentSummary(
-                                CRM_SYSTEM_ASSET,
-                                2,
-                                3601L,
-                                60L
-                        )
-                )
-        );
-    }
-
-    @Test
-    public void shouldCorrectlyCalculateRatingForAsset() {
+    public void only_incidents_with_severity_one_are_counted_to_downtime() {
         // given
         Incidents incidentsHistory = new Incidents(
                 List.of(
@@ -183,7 +149,7 @@ public class IncidentsTest {
                         new IncidentSummary(
                                 CRM_SYSTEM_ASSET,
                                 3,
-                                3L,
+                                1L,
                                 50L
                         )
                 )
