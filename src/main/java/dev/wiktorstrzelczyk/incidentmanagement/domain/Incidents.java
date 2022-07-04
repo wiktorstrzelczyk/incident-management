@@ -1,5 +1,6 @@
 package dev.wiktorstrzelczyk.incidentmanagement.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -9,7 +10,7 @@ public final class Incidents {
     private final List<Incident> incidents;
 
     public Incidents(List<Incident> incidents) {
-        this.incidents = incidents;
+        this.incidents = new ArrayList<>(incidents);
     }
 
     public List<IncidentsStatisticalSummary> summary() {
