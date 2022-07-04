@@ -11,12 +11,12 @@ import java.time.LocalDate;
 final class IncidentsStatisticalSummaryDocument {
 
     @Id
-    String id;
-    String assetName;
-    int totalIncidents;
-    long totalDowntimeInSeconds;
-    long rating;
-    LocalDate date;
+    final String id;
+    final String assetName;
+    final int totalIncidents;
+    final long totalDowntimeInSeconds;
+    final long rating;
+    final LocalDate date;
 
     public IncidentsStatisticalSummaryDocument(String id, String assetName, int totalIncidents, long totalDowntimeInSeconds, long rating, LocalDate date) {
         this.id = id;

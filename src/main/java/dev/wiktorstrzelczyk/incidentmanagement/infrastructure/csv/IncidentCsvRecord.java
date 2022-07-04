@@ -9,10 +9,10 @@ import dev.wiktorstrzelczyk.incidentmanagement.domain.IncidentSeverity;
 import java.time.LocalDateTime;
 
 class IncidentCsvRecord {
-    String assetName;
-    LocalDateTime startDate;
-    LocalDateTime endDate;
-    int severity;
+    final String assetName;
+    final LocalDateTime startDate;
+    final LocalDateTime endDate;
+    final int severity;
 
     public IncidentCsvRecord(String assetName, LocalDateTime startDate, LocalDateTime endDate, int severity) {
         this.assetName = assetName;

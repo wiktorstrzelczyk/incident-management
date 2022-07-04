@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 final class IncidentDocument {
 
     @Id
-    String id;
-    String assetName;
-    LocalDateTime startDate;
-    LocalDateTime endDate;
-    int severity;
+    final String id;
+    final String assetName;
+    final LocalDateTime startDate;
+    final LocalDateTime endDate;
+    final int severity;
 
     public IncidentDocument(String id, String assetName, LocalDateTime startDate, LocalDateTime endDate, int severity) {
         this.id = id;
